@@ -2,7 +2,9 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
 
+const writeFileAsync = util.promisify(fs.writeFile);
 
+main();
 
 // array of questions for user
 // const questions = [
@@ -15,6 +17,20 @@ const util = require("util");
 //     "What is your GitHub username?",
 //     "What is your email address?"
 // ];
+function main() {
+    promptUser()\
+      .then((answers) => {
+        const md = generateMD(answers);
+        return writeFileAsync("GeneratedReadme.md", md);
+      })
+      .then(() => {
+        console.log("Successfully generated readme!");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+}
+
 function promptUser() {
     return inquirer.prompt([
         {
@@ -60,7 +76,10 @@ function promptUser() {
     ])
 }
 // function to write README file
-function writeToFile(fileName, data) {
+function writeToFile(answers) {
+    `
+    
+    `
 }
 
 // function to initialize program
