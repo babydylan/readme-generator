@@ -18,10 +18,10 @@ main();
 //     "What is your email address?"
 // ];
 function main() {
-    promptUser()\
+    promptUser()
       .then((answers) => {
         const md = generateMD(answers);
-        return writeFileAsync("GeneratedReadme.md", md);
+        return writeFileAsync("NewREADME.md", md);
       })
       .then(() => {
         console.log("Successfully generated readme!");
@@ -36,7 +36,7 @@ function promptUser() {
         {
             type: "input",
             name: "title",
-            message: "What is your name?",
+            message: "What is your app name?",
         },
         {
             type: "input",
@@ -76,16 +76,36 @@ function promptUser() {
     ])
 }
 // function to write README file
-function writeToFile(answers) {
-    `
-    
+function generateMD(answers) {
+   return `
+# ${answers.title}
+
+## Description 
+${answers.description}.
+
+## Table of Contents
+
+* [Installation](#installation)
+* [Usage](#usage)
+* [Credits](#credits)
+* [Contributing](#contributing)
+* [Tests](#tests)
+
+## Installation
+${answers.installation}.
+
+## Usage 
+${answers.usage}.
+
+## Contributing
+${answers.contributing}.
+
+## Tests
+${answers.tests}.
+
+## Questions
+If you have any questions you can reach me at ${answers.github} or ${answers.email}.
+
     `
 }
 
-// function to initialize program
-function init() {
-
-}
-
-// function call to initialize program
-init();
