@@ -2,6 +2,13 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
 
+const licenses = [
+    "Apache 2.0 License",
+    "BSD 3-Clause License",
+    "ISC License (ISC)",
+    "The MIT License",
+];
+
 const writeFileAsync = util.promisify(fs.writeFile);
 
 main();
@@ -53,6 +60,12 @@ function promptUser() {
             message: "List any tests you have for the app and how to run them.",
         },
         {
+            name: "license",
+            type: "list",
+            message: "Choose a license:",
+            choices: licenses,
+        },
+        {
             type: "input",
             name: "github",
             message: "What is your GitHub username?",
@@ -66,8 +79,27 @@ function promptUser() {
 }
 // function to write README file
 function generateMD(answers) {
+   let badge;
+    switch (answers.license) {
+      case "Apache 2.0 License":
+        "https://img.shields.io/badge/License-Apache%202.0-blue.svg"
+        break;
+      case "BSD 3-Clause License":
+        "https://img.shields.io/badge/License-BSD%203--Clause-blue.svg"
+        break;
+      case "ISC License (ISC)":
+        badge =
+          "https://img.shields.io/badge/License-ISC-blue.svg";
+        break;
+      case "The MIT License":
+        badge =
+          "https://img.shields.io/badge/License-MIT-yellow.svg";
+        break;
+    }
    return `
 # ${answers.title}
+
+<img src="${badge}" alt="License badge">
 
 ## Description 
 ${answers.description}
@@ -91,6 +123,9 @@ ${answers.contributing}
 
 ## Tests
 ${answers.tests}
+
+## License
+${answers.license}
 
 ## Questions
 If you have any questions you can reach me at ${answers.github} or ${answers.email}

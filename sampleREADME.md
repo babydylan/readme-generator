@@ -1,6 +1,8 @@
 
 # Fridge app
 
+<img src="https://img.shields.io/badge/License-ISC-blue.svg" alt="License badge">
+
 ## Description 
 See whats inside your fridge and log new items.
 
@@ -23,6 +25,9 @@ babydylan.
 
 ## Tests
 Test if the fridge light turns off by going inside and closing yourself in.
+
+## License
+ISC License (ISC)
 
 ## Questions
 If you have any questions you can reach me at fridge-man on github or fridgeman@email.com
