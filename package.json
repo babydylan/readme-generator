@@ -1,0 +1,25 @@
+{
+  "name": "readme-generator",
+  "version": "1.0.0",
+  "description": "generate a good readme for your project by answering questions about the project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dylan Nguyen <babydylannguyen@gmail.com> (https://github.com/babydylan)",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^6.3.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/babydylan/readme-generator.git"
+  },
+  "keywords": [
+    "readme"
+  ],
+  "bugs": {
+    "url": "https://github.com/babydylan/readme-generator/issues"
+  },
+  "homepage": "https://github.com/babydylan/readme-generator#readme"
+}
