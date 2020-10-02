@@ -25,6 +25,6 @@ babydylan.
 Test if the fridge light turns off by going inside and closing yourself in.
 
 ## Questions
-If you have any questions you can reach me at fridge-man or fridgeman@email.com
+If you have any questions you can reach me at fridge-man on github or fridgeman@email.com
 
     
