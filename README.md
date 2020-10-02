@@ -10,7 +10,6 @@ Generates a readme for user using answers user inputs to prompts.
 * [Contributing](#contributing)
 * [Tests](#tests)
 
-
 ## Installation
 Download the repo then open in VS Code or just "cd" into the repository and type "npm install inquirer" in your terminal.
 

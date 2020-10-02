@@ -6,17 +6,6 @@ const writeFileAsync = util.promisify(fs.writeFile);
 
 main();
 
-// array of questions for user
-// const questions = [
-//     "What is the app's title?",
-//     "Enter Description of app.",
-//     "What are the steps required to install your app?",
-//     "What are the instructions to use the app?",
-//     "List any collaborators you had with links to their GitHub profiles and/or any third-party assets that require attribution, and/or tutorial links you followed.",
-//     "List any tests you have for the app and how to run them.",
-//     "What is your GitHub username?",
-//     "What is your email address?"
-// ];
 function main() {
     promptUser()
       .then((answers) => {
@@ -50,7 +39,7 @@ function promptUser() {
         },
         {
             type: "input",
-            name: "Usage",
+            name: "usage",
             message: "What are the instructions to use the app?",
         },
         {
@@ -81,7 +70,7 @@ function generateMD(answers) {
 # ${answers.title}
 
 ## Description 
-${answers.description}.
+${answers.description}
 
 ## Table of Contents
 
@@ -92,19 +81,19 @@ ${answers.description}.
 * [Tests](#tests)
 
 ## Installation
-${answers.installation}.
+${answers.installation}
 
-## Usage 
-${answers.usage}.
+## Usage
+${answers.usage}
 
 ## Contributing
-${answers.contributing}.
+${answers.contributing}
 
 ## Tests
-${answers.tests}.
+${answers.tests}
 
 ## Questions
-If you have any questions you can reach me at ${answers.github} or ${answers.email}.
+If you have any questions you can reach me at ${answers.github} or ${answers.email}
 
     `
 }
